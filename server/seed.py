@@ -1,3 +1,38 @@
+<<<<<<< HEAD
+from app import db, CheckIn
+from faker import Faker
+
+fake = Faker()
+
+checkin_data = [
+    {'Name': 'Eric Muthui', 'Room_number': 101},
+    {'Name': 'Joyce Wahira', 'Room_number': 102},
+    {'Name': 'Ian Imbuki', 'Room_number': 103},
+    {'Name': 'Maimuna Mohamud', 'Room_number': 106}
+]
+
+def seed_database():
+    for checkin_info in checkin_data:
+        name = checkin_info['Name']
+        room_number = checkin_info['Room_number']
+        new_checkin = CheckIn(Name=name, Room_number=room_number)
+        db.session.add(new_checkin)
+    db.session.commit()
+
+
+if __name__ == '__main__':
+    from app import app
+
+    with app.app_context():
+        db.create_all()
+        seed_database()
+        print('Database seeded successfully.')
+
+
+
+
+
+=======
 from app import app, db  # Assuming your Flask app instance and db object are defined in app.py
 from models import Tm  # Import the Tm model class
 
@@ -25,3 +60,4 @@ if __name__ == '__main__':
         # Call the seed_database function to populate the Tm table
         seed_database()
         print("Database seeded successfully!")
+>>>>>>> 8291d26ef19d59061764119c092d8116b7982b71
