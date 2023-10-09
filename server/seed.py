@@ -1,6 +1,8 @@
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 >>>>>>> 113d40d3ccb9d68bc1c1bc97e3ecbed1c91f5c22
 from app import db, CheckIn
 from faker import Faker
@@ -37,36 +39,59 @@ if __name__ == '__main__':
 
 
 <<<<<<< HEAD
+>>>>>>> 117fd24961ea022cfa48319f1d8cacdb4a20fe89
 from app import db, Student
 from faker import Faker
 
 fake = Faker()
 
-sample_students = [
-        {
-            'Name': 'John Doe',
-            'idnumber': '12345',
-            'phone': '555-555-5555',
-            'laptop_model': 'Macbook Pro',
-            'serial_number': 'MBP12345',
-            'tm_name': 'Teacher A',
-        },
-        {
-            'Name': 'Jane Smith',
-            'idnumber': '54321',
-            'phone': '555-555-1234',
-            'laptop_model': 'Dell XPS',
-            'serial_number': 'DXPS54321',
-            'tm_name': 'Teacher B',
-        },
-    ]
+student_data = [
+    {
+        'Name': 'Eric Muthui',
+        'idnumber': '12345',
+        'phone': '1234567890',
+        'laptop_model': 'Dell XPS 13',
+        'serial_number': 'ABC123',
+        'tm_name': 'John Doe'
+    },
+    {
+        'Name': 'Joyce Wahira',
+        'idnumber': '54321',
+        'phone': '9876543210',
+        'laptop_model': 'MacBook Pro',
+        'serial_number': 'XYZ789',
+        'tm_name': 'Jane Smith'
+    },
+    {
+        'Name': 'Ian Imbuki',
+        'idnumber': '67890',
+        'phone': '5555555555',
+        'laptop_model': 'HP Spectre',
+        'serial_number': 'DEF456',
+        'tm_name': 'Robert Johnson'
+    }
+]
 
-def seed_database():
-    for checkin_info in checkin_data:
-        name = checkin_info['Name']
-        room_number = checkin_info['Room_number']
-        new_checkin = CheckIn(Name=name, Room_number=room_number)
-        db.session.add(new_checkin)
+def seed_students():
+    for student_info in student_data:
+        name = student_info['Name']
+        idnumber = student_info['idnumber']
+        phone = student_info['phone']
+        laptop_model = student_info['laptop_model']
+        serial_number = student_info['serial_number']
+        tm_name = student_info['tm_name']
+        
+        new_student = Student(
+            Name=name,
+            idnumber=idnumber,
+            phone=phone,
+            laptop_model=laptop_model,
+            serial_number=serial_number,
+            tm_name=tm_name
+        )
+        
+        db.session.add(new_student)
+    
     db.session.commit()
 
 if __name__ == '__main__':
@@ -74,6 +99,10 @@ if __name__ == '__main__':
 
     with app.app_context():
         db.create_all()
+<<<<<<< HEAD
+        seed_students()
+        print('Students table seeded successfully.')
+=======
         seed_database()
         print('Database seeded successfully.')
 
@@ -114,3 +143,4 @@ if __name__ == '__main__':
         print("Database seeded successfully!")
 >>>>>>> 8291d26ef19d59061764119c092d8116b7982b71
 >>>>>>> 113d40d3ccb9d68bc1c1bc97e3ecbed1c91f5c22
+>>>>>>> 117fd24961ea022cfa48319f1d8cacdb4a20fe89
