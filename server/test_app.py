@@ -75,3 +75,5 @@ def test_delete_checkin(client):
 
 if __name__ == '__main__':
     pytest.main()
+
+
