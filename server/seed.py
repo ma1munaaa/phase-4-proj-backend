@@ -1,5 +1,5 @@
 # seed.py
-from app import db, bcrypt, Student, CheckIn, Tm, User
+from app import db, Student, CheckIn, Tm, User
 from faker import Faker
 
 fake = Faker()
