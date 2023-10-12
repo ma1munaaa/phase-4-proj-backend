@@ -30,14 +30,14 @@ db.init_app(app)
 jwt = JWTManager(app)
 
 
-CORS(app, supports_credentials=True)
+# CORS(app, supports_credentials=True)
+
+CORS(app, resources={r"/*": {"origins": "https://checkin-system-47hr.onrender.com"}}, supports_credentials=True)
 
 # CORS(app, origins=["https://react-app-rodm.onrender.com", "http://localhost:3000"],
 # methods=['GET', 'POST'], allow_headers=['Authorization', 'Content-Type', 'x-access-token'])
 
-# frontend_origin = 'https://react-app-rodm.onrender.com/'
 
-# CORS(app, resources={r"/*": {"origins": frontend_origin}})
 
 
 
