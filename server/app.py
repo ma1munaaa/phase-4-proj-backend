@@ -16,9 +16,9 @@ from models import CheckIn, db, User, Tm, Student
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///checkin.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.json.compact = False
-app.config['JWT_SECRET_KEY'] = '123456'  # Replace with a strong secret key
+app.config['JWT_SECRET_KEY'] = '123456'
 
 
 
@@ -37,7 +37,9 @@ jwt = JWTManager(app)
 
 frontend_origin = 'https://muthuieric.github.io'
 
-CORS(app, resources={r"/api/*": {"origins": frontend_origin}})
+# CORS(app, resources={r"/api/*": {"origins": frontend_origin}})
+CORS(app, resources={r"/*": {"origins": frontend_origin}})
+
 
 
 
