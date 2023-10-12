@@ -30,7 +30,7 @@ db.init_app(app)
 jwt = JWTManager(app)
 
 
-CORS(app)
+CORS(app, CORS(app, supports_credentials=True))
 
 # CORS(app, origins=["https://react-app-rodm.onrender.com", "http://localhost:3000"],
 # methods=['GET', 'POST'], allow_headers=['Authorization', 'Content-Type', 'x-access-token'])
