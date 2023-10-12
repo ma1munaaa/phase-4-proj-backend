@@ -16,7 +16,7 @@ from models import CheckIn, db, User, Tm, Student
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///checkin.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.json.compact = False
 app.config['JWT_SECRET_KEY'] = '123456'
 
