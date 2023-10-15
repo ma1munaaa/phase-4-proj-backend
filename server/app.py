@@ -32,7 +32,7 @@ jwt = JWTManager(app)
 
 # CORS(app, supports_credentials=True)
 
-CORS(app, resources={r"/*": {"origins": "https://checkin-system-47hr.onrender.com"}}, supports_credentials=True)
+CORS(app, resources={r"/*": {"origins": "https://phase-4-proj-frontend-iv-c6o5.vercel.app/"}}, supports_credentials=True)
 
 # CORS(app, origins=["https://react-app-rodm.onrender.com", "http://localhost:3000"],
 # methods=['GET', 'POST'], allow_headers=['Authorization', 'Content-Type', 'x-access-token'])
