@@ -32,7 +32,7 @@ jwt = JWTManager(app)
 
 # CORS(app, supports_credentials=True)
 
-cors = CORS(app, resources={r"/api/*": {"origins": "https://phase-4-proj-frontend-iv-c6o5.vercel.app"}})
+cors = CORS(app, resources={r"/*": {"origins": "https://phase-4-proj-frontend-iv-c6o5.vercel.app"}})
 
 
 
